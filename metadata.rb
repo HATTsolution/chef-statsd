@@ -9,7 +9,7 @@ recipe            "statsd", "Installs and configures StatsD"
   depends d
 end
 
-%w{ ubuntu }.each do |os|
+%w{ ubuntu debian }.each do |os|
     supports os
 end
 

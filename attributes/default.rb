@@ -1,5 +1,11 @@
-default["statsd"]["dir"]            = "/usr/share/statsd"
+case platform
+when "debian"
+  default["statsd"]["dir"] = "/opt/statsd"
+else                      
+  default["statsd"]["dir"] = "/usr/share/statsd"
+end
 default["statsd"]["conf_dir"]       = "/etc/statsd"
+default["statsd"]["conf_file"]      = "/etc/statsd/config.js"
 default["statsd"]["repository"]     = "git://github.com/etsy/statsd.git"
 default["statsd"]["log_file"]       = "/var/log/statsd.log"
 default["statsd"]["flush_interval"] = 10000
